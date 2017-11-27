@@ -1,0 +1,57 @@
+---
+title: "Optimal Stopping"
+author: "Robert Tuck"
+date: "11/26/2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+## Background
+
+Optimal stopping deals with the problems of choosing a time to take a particular action.  How many candidates do we sample?  How long until we choose a parking spot?  How many offers do we reject when selling a house?
+
+The Secretary Problem is a good example of showing how these problems are approached.
+
+## Secretary Problem
+
+You are interviewing to select yourself a new employee, and there are n candidates applying for the position. You interview them individually, one-by-one, in a random order. After each interview, you must make a binary decision: HIRE or PASS. If you select HIRE, the interview process immediately stops as you have only one position to fill.
+
+If you PASS on a candidate, they are dismissed, they leave the interview room, and you do not get a second chance with this applicant (They are passed by for good).
+
+We want to to maximize the probability of selecting the best applicant.
+
+##Strategy
+
+Just choosing a candidate randomly results in a probability of 1/n of the subject being the best candidate.
+
+Can we do better?
+
+A better strategy is to meet a few candidates, note their talents, and remember the highest.  Then continue with the rest of the candidates and choose the next one whose skills exceed the previous highest candidate.
+
+##Which sample is "Just right"?
+
+If a sample is too small, we don't get enough information to decide.
+
+If a sample is too large, we have gotten rid of too many potential candidates and we may have already missed the best candidate.
+
+##Directions
+
+Select an N to represent the number of candidates in the pool.  The red colored bar represents the optimal number of candidates to discard before hiring.  The optimal number corresponds to the highest probability of successfully selecting the "best" candidate.
+
+##Summary
+
+k represents the optimal sample size - The number of candidates to pass on before deciding.
+
+As n increases the value of the ratio k/n and the chance of success for the optimal case both converge to about 37% or 1/e
+
+You can see this by varying n in the application.
+
+So basically skip the first 36.79% candidates you meet and select the first candidate you see whose talents exceed the highest you've seen to-date. There is a 36.79% chance that you will end up with the best candidate.
+
+For more info: [The Secretary Problem](https://en.wikipedia.org/wiki/Secretary_problem)
+
+
+
+
