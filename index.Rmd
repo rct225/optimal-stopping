@@ -36,6 +36,8 @@ If a sample is too small, we don't get enough information to decide.
 
 If a sample is too large, we have gotten rid of too many potential candidates and we may have already missed the best candidate.
 
+Code: [https://github.com/rct225/optimal-stopping](https://github.com/rct225/optimal-stopping)
+
 ##Directions
 
 Select an N to represent the number of candidates in the pool.  The red colored bar represents the optimal number of candidates to discard before hiring.  The optimal number corresponds to the highest probability of successfully selecting the "best" candidate.
